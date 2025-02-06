@@ -26,37 +26,124 @@ public class Tela_ordens_de_servico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imagem_do_usuario_os = new javax.swing.JLabel();
+        tipo_de_usuario_os = new javax.swing.JLabel();
+        nome_usuario_os = new javax.swing.JLabel();
+        tela_inicial = new javax.swing.JLabel();
         painel_ordens_de_servico = new javax.swing.JPanel();
-        texto_ordens_de_servico = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(1920, 1080, 1080, 1080));
         setMaximumSize(new java.awt.Dimension(1920, 1080));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imagem_do_usuario_os.setText("foto usuario");
+        getContentPane().add(imagem_do_usuario_os, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 20, 40, 30));
+
+        tipo_de_usuario_os.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        tipo_de_usuario_os.setText("Administrador");
+        getContentPane().add(tipo_de_usuario_os, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 40, -1, -1));
+
+        nome_usuario_os.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        nome_usuario_os.setText("Suel sousa");
+        getContentPane().add(nome_usuario_os, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, -1, -1));
+
+        tela_inicial.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        tela_inicial.setText("Ordens de serviço");
+        getContentPane().add(tela_inicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         painel_ordens_de_servico.setMaximumSize(new java.awt.Dimension(1920, 1080));
         painel_ordens_de_servico.setMinimumSize(new java.awt.Dimension(1920, 1080));
         painel_ordens_de_servico.setVerifyInputWhenFocusTarget(false);
 
-        texto_ordens_de_servico.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        texto_ordens_de_servico.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        texto_ordens_de_servico.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 210, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 210, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 441, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 210, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 441, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 164, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 137, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout painel_ordens_de_servicoLayout = new javax.swing.GroupLayout(painel_ordens_de_servico);
         painel_ordens_de_servico.setLayout(painel_ordens_de_servicoLayout);
         painel_ordens_de_servicoLayout.setHorizontalGroup(
             painel_ordens_de_servicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painel_ordens_de_servicoLayout.createSequentialGroup()
-                .addComponent(texto_ordens_de_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 972, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 948, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(painel_ordens_de_servicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 956, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painel_ordens_de_servicoLayout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1081, Short.MAX_VALUE))
         );
         painel_ordens_de_servicoLayout.setVerticalGroup(
             painel_ordens_de_servicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painel_ordens_de_servicoLayout.createSequentialGroup()
-                .addComponent(texto_ordens_de_servico, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 507, Short.MAX_VALUE))
+                .addGap(74, 74, 74)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(painel_ordens_de_servicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1527, Short.MAX_VALUE))
         );
 
         getContentPane().add(painel_ordens_de_servico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -100,7 +187,15 @@ public class Tela_ordens_de_servico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imagem_do_usuario_os;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel nome_usuario_os;
     private javax.swing.JPanel painel_ordens_de_servico;
-    private javax.swing.JLabel texto_ordens_de_servico;
+    private javax.swing.JLabel tela_inicial;
+    private javax.swing.JLabel tipo_de_usuario_os;
     // End of variables declaration//GEN-END:variables
 }

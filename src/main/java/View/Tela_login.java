@@ -27,7 +27,6 @@ public class Tela_login extends javax.swing.JFrame {
     private void initComponents() {
 
         painel_login = new javax.swing.JPanel();
-        label_login = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         campo_usuario = new javax.swing.JTextField();
         campo_senha = new javax.swing.JTextField();
@@ -35,6 +34,7 @@ public class Tela_login extends javax.swing.JFrame {
         texto_senha = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -50,11 +50,6 @@ public class Tela_login extends javax.swing.JFrame {
         painel_login.setPreferredSize(new java.awt.Dimension(1920, 1080));
         painel_login.setRequestFocusEnabled(false);
 
-        label_login.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        label_login.setMinimumSize(new java.awt.Dimension(1920, 1080));
-        label_login.setPreferredSize(new java.awt.Dimension(1920, 1080));
-        label_login.setVerifyInputWhenFocusTarget(false);
-
         jToggleButton1.setText("Login");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,14 +57,14 @@ public class Tela_login extends javax.swing.JFrame {
             }
         });
 
-        campo_usuario.setText("Inserir usuário");
+        campo_usuario.setText("Usuário");
         campo_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_usuarioActionPerformed(evt);
             }
         });
 
-        campo_senha.setText("Inserir senha");
+        campo_senha.setText("Senha");
 
         texto_usuario.setText("Usuário:");
 
@@ -100,12 +95,10 @@ public class Tela_login extends javax.swing.JFrame {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1)
                             .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(383, 383, 383)
-                .addComponent(label_login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(1361, Short.MAX_VALUE))
         );
         painel_loginLayout.setVerticalGroup(
             painel_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(painel_loginLayout.createSequentialGroup()
                 .addGap(149, 149, 149)
                 .addComponent(texto_usuario)
@@ -121,10 +114,11 @@ public class Tela_login extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(710, Short.MAX_VALUE))
         );
 
         getContentPane().add(painel_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 533));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,8 +171,8 @@ public class Tela_login extends javax.swing.JFrame {
     private javax.swing.JTextField campo_usuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JLabel label_login;
     private javax.swing.JPanel painel_login;
     private javax.swing.JLabel texto_senha;
     private javax.swing.JLabel texto_usuario;
