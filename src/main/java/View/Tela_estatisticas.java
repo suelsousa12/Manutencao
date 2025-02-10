@@ -36,9 +36,11 @@ public class Tela_estatisticas extends javax.swing.JFrame {
         grafico_de_barras = new javax.swing.JPanel();
         periodo_grafico_de_barras = new javax.swing.JComboBox<>();
         nome_grafico_de_barras = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         periodo_grafico_de_pizza = new javax.swing.JComboBox<>();
         nome_grafico_de_pizza = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -64,23 +66,29 @@ public class Tela_estatisticas extends javax.swing.JFrame {
 
         botao_gerar_pdf.setText("Gerar PDF");
 
-        grafico_de_barras.setBackground(new java.awt.Color(0, 204, 204));
+        grafico_de_barras.setBackground(new java.awt.Color(0, 204, 153));
 
-        periodo_grafico_de_barras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        periodo_grafico_de_barras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Período" }));
         periodo_grafico_de_barras.setSelectedItem(Período);
 
         nome_grafico_de_barras.setText("Gráfico de barra");
+        nome_grafico_de_barras.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout grafico_de_barrasLayout = new javax.swing.GroupLayout(grafico_de_barras);
         grafico_de_barras.setLayout(grafico_de_barrasLayout);
         grafico_de_barrasLayout.setHorizontalGroup(
             grafico_de_barrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, grafico_de_barrasLayout.createSequentialGroup()
+            .addGroup(grafico_de_barrasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(nome_grafico_de_barras, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(periodo_grafico_de_barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGroup(grafico_de_barrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, grafico_de_barrasLayout.createSequentialGroup()
+                        .addComponent(nome_grafico_de_barras, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addComponent(periodo_grafico_de_barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, grafico_de_barrasLayout.createSequentialGroup()
+                        .addComponent(jSeparator3)
+                        .addContainerGap())))
         );
         grafico_de_barrasLayout.setVerticalGroup(
             grafico_de_barrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,12 +97,14 @@ public class Tela_estatisticas extends javax.swing.JFrame {
                 .addGroup(grafico_de_barrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(periodo_grafico_de_barras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nome_grafico_de_barras, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(343, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 102));
 
-        periodo_grafico_de_pizza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        periodo_grafico_de_pizza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Período" }));
         periodo_grafico_de_pizza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 periodo_grafico_de_pizzaActionPerformed(evt);
@@ -102,17 +112,23 @@ public class Tela_estatisticas extends javax.swing.JFrame {
         });
 
         nome_grafico_de_pizza.setText("Gráfico de pizza");
+        nome_grafico_de_pizza.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(nome_grafico_de_pizza, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addComponent(periodo_grafico_de_pizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(nome_grafico_de_pizza, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addComponent(periodo_grafico_de_pizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jSeparator2)
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +137,9 @@ public class Tela_estatisticas extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nome_grafico_de_pizza, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(periodo_grafico_de_pizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout painel_estatisticasLayout = new javax.swing.GroupLayout(painel_estatisticas);
@@ -213,6 +231,8 @@ public class Tela_estatisticas extends javax.swing.JFrame {
     private javax.swing.JLabel imagem_do_usuario_os;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel nome_grafico_de_barras;
     private javax.swing.JLabel nome_grafico_de_pizza;
     private javax.swing.JLabel nome_usuario_os;

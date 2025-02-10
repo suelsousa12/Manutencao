@@ -44,7 +44,7 @@ public class Tela_login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        painel_login.setBackground(new java.awt.Color(0, 204, 204));
+        painel_login.setBackground(new java.awt.Color(0, 255, 204));
         painel_login.setMaximumSize(new java.awt.Dimension(1920, 1080));
         painel_login.setMinimumSize(new java.awt.Dimension(1920, 1080));
         painel_login.setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -74,7 +74,7 @@ public class Tela_login extends javax.swing.JFrame {
         jButton1.setText("Recuperar senha");
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Crie uma conta");
+        jButton2.setText("Criar uma conta");
 
         javax.swing.GroupLayout painel_loginLayout = new javax.swing.GroupLayout(painel_login);
         painel_login.setLayout(painel_loginLayout);
