@@ -54,6 +54,7 @@ public class Tela_home extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
         painel_grafico_de_pizza = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -63,6 +64,9 @@ public class Tela_home extends javax.swing.JFrame {
         imagem_do_usuario_ti1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
+        imagem_do_usuario_ti2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         nome_usuario_ti = new javax.swing.JLabel();
         imagem_do_usuario_ti = new javax.swing.JLabel();
         tipo_de_usuario_ti = new javax.swing.JLabel();
@@ -111,7 +115,7 @@ public class Tela_home extends javax.swing.JFrame {
 
         Campo_de_pesquisa_tela_inicial.setText("Pesquisa");
 
-        guia_de_projetos1.setText("Projetos residencial");
+        guia_de_projetos1.setText("Projetos residenciais");
         guia_de_projetos1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         versao.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -216,6 +220,14 @@ public class Tela_home extends javax.swing.JFrame {
         jComboBox3.setBackground(new java.awt.Color(153, 255, 204));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Materiais" }));
 
+        jComboBox5.setBackground(new java.awt.Color(153, 255, 204));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painel_de_estatisticasLayout = new javax.swing.GroupLayout(painel_de_estatisticas);
         painel_de_estatisticas.setLayout(painel_de_estatisticasLayout);
         painel_de_estatisticasLayout.setHorizontalGroup(
@@ -223,19 +235,25 @@ public class Tela_home extends javax.swing.JFrame {
             .addGroup(painel_de_estatisticasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painel_de_estatisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4)
                     .addGroup(painel_de_estatisticasLayout.createSequentialGroup()
                         .addGroup(painel_de_estatisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_de_estatisticasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
-                .addContainerGap())
+                            .addComponent(jSeparator4)
+                            .addGroup(painel_de_estatisticasLayout.createSequentialGroup()
+                                .addGroup(painel_de_estatisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_de_estatisticasLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9)))
+                        .addContainerGap())
+                    .addGroup(painel_de_estatisticasLayout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))))
         );
         painel_de_estatisticasLayout.setVerticalGroup(
             painel_de_estatisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,12 +263,14 @@ public class Tela_home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painel_de_estatisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -294,6 +314,12 @@ public class Tela_home extends javax.swing.JFrame {
 
         jTextField1.setText("- Estamos precisando de EPI's no projeto de pintura do sul da cidade.");
 
+        imagem_do_usuario_ti2.setText("foto usuario");
+
+        jTextField2.setText("- Precisamos da planta elétrica da casa 512 da alameda norte.");
+
+        jButton3.setText("Responder");
+
         javax.swing.GroupLayout painel_de_chamadosLayout = new javax.swing.GroupLayout(painel_de_chamados);
         painel_de_chamados.setLayout(painel_de_chamadosLayout);
         painel_de_chamadosLayout.setHorizontalGroup(
@@ -301,19 +327,27 @@ public class Tela_home extends javax.swing.JFrame {
             .addGroup(painel_de_chamadosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painel_de_chamadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painel_de_chamadosLayout.createSequentialGroup()
-                        .addComponent(jSeparator6)
-                        .addContainerGap())
-                    .addGroup(painel_de_chamadosLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_de_chamadosLayout.createSequentialGroup()
-                        .addComponent(imagem_do_usuario_ti1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(imagem_do_usuario_ti2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(25, 25, 25))))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addGap(30, 30, 30))
+                    .addGroup(painel_de_chamadosLayout.createSequentialGroup()
+                        .addGroup(painel_de_chamadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator6)
+                            .addGroup(painel_de_chamadosLayout.createSequentialGroup()
+                                .addGroup(painel_de_chamadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(painel_de_chamadosLayout.createSequentialGroup()
+                                        .addComponent(imagem_do_usuario_ti1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton1)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         painel_de_chamadosLayout.setVerticalGroup(
             painel_de_chamadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +361,12 @@ public class Tela_home extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(imagem_do_usuario_ti1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(painel_de_chamadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3)
+                    .addComponent(imagem_do_usuario_ti2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
 
         nome_usuario_ti.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -404,6 +443,10 @@ public class Tela_home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -454,11 +497,14 @@ public class Tela_home extends javax.swing.JFrame {
     private javax.swing.JLabel guia_ordens_de_servico;
     private javax.swing.JLabel imagem_do_usuario_ti;
     private javax.swing.JLabel imagem_do_usuario_ti1;
+    private javax.swing.JLabel imagem_do_usuario_ti2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -469,6 +515,7 @@ public class Tela_home extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lixeira;
     private javax.swing.JLabel logotipo;
     private javax.swing.JLabel nome_usuario_ti;
