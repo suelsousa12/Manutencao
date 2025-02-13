@@ -77,9 +77,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="403" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButton2" min="-2" pref="117" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jToggleButton1" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="criar_conta" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="recuperrar_senha" min="-2" max="-2" attributes="0"/>
+                              <Component id="login" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -99,23 +99,23 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="campo_senha" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="recuperrar_senha" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="criar_conta" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jToggleButton1" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="login" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace pref="710" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="login">
           <Properties>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="campo_usuario">
@@ -141,7 +141,7 @@
             <Property name="text" type="java.lang.String" value="Senha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="recuperrar_senha">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -149,13 +149,16 @@
             <Property name="text" type="java.lang.String" value="Recuperar senha"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="criar_conta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Criar uma conta"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criar_contaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

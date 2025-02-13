@@ -8,6 +8,7 @@ package Controller;
  *
  * @author devmat
  */
+import Model.Pintura;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

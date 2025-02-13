@@ -4,6 +4,14 @@
  */
 package View;
 
+import Controller.LoginController;
+import Controller.UsuarioController;
+import Model.Usuario;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author devmat
@@ -16,6 +24,56 @@ public class Tela_login extends javax.swing.JFrame {
     public Tela_login() {
         initComponents();
     }
+    
+    
+    
+    
+    public void mostrarCadastroUsuario() {
+    try {
+        // Captura os dados via JOptionPane
+        String nome = JOptionPane.showInputDialog(this, "Digite seu nome:", "Cadastro de Usuário", JOptionPane.PLAIN_MESSAGE);
+        if (nome == null || nome.trim().isEmpty()) return;
+
+        String email = JOptionPane.showInputDialog(this, "Digite seu e-mail:", "Cadastro de Usuário", JOptionPane.PLAIN_MESSAGE);
+        if (email == null || email.trim().isEmpty()) return;
+
+        String senha = JOptionPane.showInputDialog(this, "Digite sua senha:", "Cadastro de Usuário", JOptionPane.PLAIN_MESSAGE);
+        if (senha == null || senha.trim().isEmpty()) return;
+
+        String cpf = JOptionPane.showInputDialog(this, "Digite seu CPF:", "Cadastro de Usuário", JOptionPane.PLAIN_MESSAGE);
+        if (cpf == null || cpf.trim().isEmpty()) return;
+
+        String dataStr = JOptionPane.showInputDialog(this, "Digite sua Data de Nascimento (dd/MM/yyyy):", "Cadastro de Usuário", JOptionPane.PLAIN_MESSAGE);
+        if (dataStr == null || dataStr.trim().isEmpty()) return;
+
+        // Convertendo String para Date
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataNascimento = formatador.parse(dataStr);
+        
+        // Criando objeto do usuário
+        Usuario novoUsuario = new Usuario();
+        novoUsuario.setNome(nome);
+        novoUsuario.setEmail(email);
+        novoUsuario.setSenha(senha);
+        novoUsuario.setCpf(cpf);
+        novoUsuario.setDataNascimento(new java.sql.Date(dataNascimento.getTime()));
+
+        // Chamando o método de cadastro no controller
+        UsuarioController usuarioController = new UsuarioController();
+        boolean sucesso = usuarioController.cadastrandoUsuario(novoUsuario);
+
+        // Exibindo resultado
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (ParseException e) {
+        JOptionPane.showMessageDialog(this, "Formato de data inválido! Use dd/MM/yyyy.", "Erro", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro inesperado: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,13 +85,13 @@ public class Tela_login extends javax.swing.JFrame {
     private void initComponents() {
 
         painel_login = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        login = new javax.swing.JToggleButton();
         campo_usuario = new javax.swing.JTextField();
         campo_senha = new javax.swing.JTextField();
         texto_usuario = new javax.swing.JLabel();
         texto_senha = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        recuperrar_senha = new javax.swing.JButton();
+        criar_conta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,10 +108,10 @@ public class Tela_login extends javax.swing.JFrame {
         painel_login.setPreferredSize(new java.awt.Dimension(1920, 1080));
         painel_login.setRequestFocusEnabled(false);
 
-        jToggleButton1.setText("Login");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
 
@@ -70,11 +128,16 @@ public class Tela_login extends javax.swing.JFrame {
 
         texto_senha.setText("Senha:");
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setText("Recuperar senha");
+        recuperrar_senha.setBackground(new java.awt.Color(204, 204, 204));
+        recuperrar_senha.setText("Recuperar senha");
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Criar uma conta");
+        criar_conta.setBackground(new java.awt.Color(204, 204, 204));
+        criar_conta.setText("Criar uma conta");
+        criar_conta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                criar_contaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painel_loginLayout = new javax.swing.GroupLayout(painel_login);
         painel_login.setLayout(painel_loginLayout);
@@ -92,9 +155,9 @@ public class Tela_login extends javax.swing.JFrame {
                     .addGroup(painel_loginLayout.createSequentialGroup()
                         .addGap(403, 403, 403)
                         .addGroup(painel_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(criar_conta, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(recuperrar_senha)
+                            .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(1361, Short.MAX_VALUE))
         );
         painel_loginLayout.setVerticalGroup(
@@ -109,11 +172,11 @@ public class Tela_login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recuperrar_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(criar_conta, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(710, Short.MAX_VALUE))
         );
 
@@ -123,13 +186,35 @@ public class Tela_login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+        // criar um objeto da classe LoginController
+        LoginController controller = new LoginController();
+        // criando variavel que receba o retorno do metodo autenticar
+        Usuario logou = controller.authenticate(
+          campousuario.getText(),campo_senha.getText());
+        
+        if(logou !=null){
+          JOptionPane.showMessageDialog(null,"Usuario logado com sucesso! "+ logou.getNome());
+          // abrir a tela Home
+          Tela_home home = new Tela_home(logou);
+          home.setVisible(true);
+          // fechando tela de login
+          dispose();
+          
+        }else{
+            JOptionPane.showMessageDialog(null,"Usuario não encontrado!");
+        }
+    }//GEN-LAST:event_loginActionPerformed
 
     private void campo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_usuarioActionPerformed
+
+    private void criar_contaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criar_contaActionPerformed
+        // TODO add your handling code here:
+        mostrarCadastroUsuario();
+    }//GEN-LAST:event_criar_contaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,11 +254,11 @@ public class Tela_login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField campo_senha;
     private javax.swing.JTextField campo_usuario;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton criar_conta;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton login;
     private javax.swing.JPanel painel_login;
+    private javax.swing.JButton recuperrar_senha;
     private javax.swing.JLabel texto_senha;
     private javax.swing.JLabel texto_usuario;
     // End of variables declaration//GEN-END:variables

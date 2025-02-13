@@ -4,6 +4,8 @@
  */
 package View;
 
+import Model.Usuario;
+
 /**
  *
  * @author devmat
@@ -13,7 +15,7 @@ public class Tela_home extends javax.swing.JFrame {
     /**
      * Creates new form Tela_home
      */
-    public Tela_home() {
+    public Tela_home(Usuario logou) {
         initComponents();
     }
 
@@ -438,7 +440,7 @@ public class Tela_home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -477,7 +479,7 @@ public class Tela_home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Tela_home().setVisible(true);
+                new Tela_home(logou).setVisible(true);
             }
         });
     }

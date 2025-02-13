@@ -69,7 +69,6 @@ public class Tela_estatisticas extends javax.swing.JFrame {
         grafico_de_barras.setBackground(new java.awt.Color(0, 204, 153));
 
         periodo_grafico_de_barras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Período" }));
-        periodo_grafico_de_barras.setSelectedItem(Período);
 
         nome_grafico_de_barras.setText("Gráfico de barra");
         nome_grafico_de_barras.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
